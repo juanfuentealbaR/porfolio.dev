@@ -1,9 +1,15 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import React from "./icons/React.astro";
+import Express from "./icons/Express.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Pug from "./icons/Pug.astro";
+import MySQL from "./icons/MySQL.astro";
+import MongoDB from "./icons/MongoDB.astro";
 
 const TAGS = {
   NEXT: {
@@ -16,78 +22,119 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-black text-white",
+    icon: Express,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#8311fa] text-white",
+    icon: Bootstrap,
+  },
+  PUG: {
+    name: "Pug",
+    class: "bg-[#a86454] text-white",
+    icon: Pug,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#015b85] text-white",
+    icon: MySQL,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#001e2b] text-white",
+    icon: MongoDB,
+  },
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Agencia de Viajes",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Página web para reservar viajes y disfrutar de tus vacaciones. Tiene mucho texto en latín, no te asustes, es solo por probar como vá el texto ya que es un proyecto de aprendizaje. Desarrollado con Express, Pug, Bootstrap, MySQL y Sequelize.",
+    link: "https://agenciaviajesnode-adb5.onrender.com",
+    github: "https://github.com/juanfuentealbaR/agenciaviajesnode",
+    image: "/projects/agenciaviajes.webp",
+    note: "Proyecto desplegado en Render, por lo que demora 1 minuto en cargar, luego vá rápido.",
+    tags: [TAGS.PUG, TAGS.EXPRESS, TAGS.BOOTSTRAP, TAGS.MYSQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "APV - Administrador De Pacientes de Veterinaria",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Aplicación que sirve para gestionar los pacientes de una veterinaria. Cuenta con login y todo lo relacionado a seguridad de rutas, registro de cuenta con confirmación por correo, recuperar contraseña, y las funciones relacionadas a la gestión de los pacientes. Desarrollada con stack MERN (MongoDB, Express, React y Node) y TailwindCSS.",
+    link: "https://apv-frontend-bay.vercel.app",
+    github: "https://github.com/juanfuentealbaR/apv-frontend",
+    note: "Desplegado en Vercel y Render, por lo que puede demorar un poco al realizar un registro o login al principio, luego vá rápido.",
+    image: "/projects/apv.webp",
+    tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.MONGODB],
   },
-]
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+    PROJECTS.map(({ image, title, description, tags, link, github, note }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+
+            {note && (
+              <div class="mt-2 text-red-400 dark:text-yellow-400">{note}</div>
+            )}
+
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
