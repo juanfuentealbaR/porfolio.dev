@@ -10,6 +10,7 @@ import Bootstrap from "./icons/Bootstrap.astro";
 import Pug from "./icons/Pug.astro";
 import MySQL from "./icons/MySQL.astro";
 import MongoDB from "./icons/MongoDB.astro";
+import Vue from "./icons/Vue.astro";
 
 const TAGS = {
   NEXT: {
@@ -52,6 +53,11 @@ const TAGS = {
     class: "bg-[#001e2b] text-white",
     icon: MongoDB,
   },
+  VUE: {
+    name: "Vue",
+    class: "bg-[#001e2b] text-white",
+    icon: Vue,
+  },
 };
 const PROJECTS = [
   {
@@ -73,6 +79,15 @@ const PROJECTS = [
     note: "Desplegado en Vercel y Render, por lo que puede demorar un poco al realizar un registro o login al principio, luego vá rápido.",
     image: "/projects/apv.webp",
     tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.MONGODB],
+  },
+  {
+    title: "Cotizador de Préstamos",
+    description:
+      "Esta simple aplicación web te permite calcular un préstamo con intereses, en donde puedes seleccionar el monto y el plazo en meses. Desarrollado con Vue y TailwindCSS.",
+    link: "https://jfross-cotizador-vue.netlify.app",
+    github: "https://github.com/juanfuentealbaR/cotizador-vue",
+    image: "/projects/cotizadorvue.webp",
+    tags: [TAGS.VUE, TAGS.TAILWIND],
   },
 ];
 ---
