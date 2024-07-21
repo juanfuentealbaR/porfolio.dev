@@ -4,6 +4,10 @@ import Badge from "@/components/Badge.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <div class="max-w-xl">
@@ -19,25 +23,25 @@ import SocialPill from "@/components/SocialPill.astro";
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>{i18n.WORK_BADGE}</Badge>
     </a>
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hola, soy Juan Pablo Fuentealba Ross
+    {i18n.HERO_TITLE}
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    Soy <strong>Ingeniero Civil Informático</strong> de la Pontifícia Universidad
-    Católica de Valparaíso. Tengo 1 año de experiencia laboral. Vivo en Quilpué,
-    V Región, Chile 🇨🇱. Especializado en el desarrollo de aplicaciones web únicas.
+    {i18n.HERO_DESCRIPTION_BEFORE_STRONG}
+    <strong>{i18n.HERO_DESCRIPTION_STRONG}</strong>
+    {i18n.HERO_DESCRIPTION_AFTER_STRONG}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:j.fuentealba.ross@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      {i18n.SOCIAL_PILL}
     </SocialPill>
     <SocialPill href="https://www.linkedin.com/in/jfuentealbaross/">
       <LinkedInIcon class="size-4" />

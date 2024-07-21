@@ -1,0 +1,60 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import { getI18N } from "@/i18n";
+import { getIDsFromLanguage } from "@/i18n/utils";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const IDs = getIDsFromLanguage({ currentLocale });
+---
+
+<Layout
+  title=`${i18n.SEO_TITLE_1} ${i18n.SEO_TITLE_2}`
+  description=`${i18n.SEO_DESCRIPTION}`
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id={IDs["#experiencia"]}>
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <Briefcase class="size-8" />
+          {i18n.EXPERIENCE_TITLE}
+        </h2>
+        <Experience />
+      </SectionContainer>
+
+      <SectionContainer id={IDs["#proyectos"]}>
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        >
+          <CodeIcon class="size-7" />
+          {i18n.PROJECTS_TITLE}
+        </h2>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id={IDs["#sobre-mi"]}>
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        >
+          <ProfileCheck class="size-8" />
+          {i18n.ABOUT_TITLE}
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>

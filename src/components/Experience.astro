@@ -1,35 +1,37 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-const EXPERIENCIE = [
+
+import { getI18N } from "@/i18n";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const EXPERIENCE = [
   {
-    date: "Marzo 2023 - Agosto 2023",
-    title: "Ayudante investigador",
+    date: `${i18n.EXPERIENCE_DATE_1}`,
+    title: `${i18n.EXPERIENCE_TITLE_1}`,
     company: "PUCV",
-    description:
-      "Desarrollé un algoritmo en Python que mejoró la precisión de la optimización global en el proyecto FONDECYT 1200035, “Exact Methods for Continuous and no-convex multiobjetive optimization problems”.",
+    description: `${i18n.EXPERIENCE_DESCRIPTION_1}`,
   },
   {
-    date: "Abril 2022 - Junio 2022",
-    title: "Analista programador",
+    date: `${i18n.EXPERIENCE_DATE_2}`,
+    title: `${i18n.EXPERIENCE_TITLE_2}`,
     company: "ANS S.A.",
-    description:
-      "Terminación del proyecto empezado en la práctica. Integré varios servicios de Microsoft Azure para así darle mayor funcionalidad al producto, y también agregarle un valor extra.",
+    description: `${i18n.EXPERIENCE_DESCRIPTION_2}`,
   },
   {
-    date: "Enero 2022 - Febrero 2022",
-    title: "Analista programador (Práctica)",
+    date: `${i18n.EXPERIENCE_DATE_3}`,
+    title: `${i18n.EXPERIENCE_TITLE_3}`,
     company: "ANS S.A.",
-    description:
-      "Desarrollé una aplicación web con Angular, Bootstrap y Express. Integración de algunos servicios de Microsoft Azure.",
+    description: `${i18n.EXPERIENCE_DESCRIPTION_3}`,
   },
 ];
 ---
 
 <ol class="relative mt-16">
   {
-    EXPERIENCIE.map((experiencie) => (
+    EXPERIENCE.map((experience) => (
       <li class="">
-        <ExperienceItem {...experiencie} />
+        <ExperienceItem {...experience} />
       </li>
     ))
   }

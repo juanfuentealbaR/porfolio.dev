@@ -12,6 +12,11 @@ import MySQL from "./icons/MySQL.astro";
 import MongoDB from "./icons/MongoDB.astro";
 import Vue from "./icons/Vue.astro";
 
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -61,29 +66,26 @@ const TAGS = {
 };
 const PROJECTS = [
   {
-    title: "Agencia de Viajes",
-    description:
-      "Página web para reservar viajes y disfrutar de tus vacaciones. Tiene mucho texto en latín, no te asustes, es solo por probar como vá el texto ya que es un proyecto de aprendizaje. Desarrollado con Express, Pug, Bootstrap, MySQL y Sequelize.",
+    title: `${i18n.PROJECT_TITLE_1}`,
+    description: `${i18n.PROJECT_DESCRIPTION_1}`,
     link: "https://agenciaviajesnode-adb5.onrender.com",
     github: "https://github.com/juanfuentealbaR/agenciaviajesnode",
     image: "/projects/agenciaviajes.webp",
-    note: "Proyecto desplegado en Render, por lo que demora 1 minuto en cargar, luego vá rápido.",
+    note: `${i18n.PROJECT_NOTE_1}`,
     tags: [TAGS.PUG, TAGS.EXPRESS, TAGS.BOOTSTRAP, TAGS.MYSQL],
   },
   {
-    title: "APV - Administrador De Pacientes de Veterinaria",
-    description:
-      "Aplicación que sirve para gestionar los pacientes de una veterinaria. Cuenta con login y todo lo relacionado a seguridad de rutas, registro de cuenta con confirmación por correo, recuperar contraseña, y las funciones relacionadas a la gestión de los pacientes. Desarrollada con stack MERN (MongoDB, Express, React y Node) y TailwindCSS.",
+    title: `${i18n.PROJECT_TITLE_2}`,
+    description: `${i18n.PROJECT_DESCRIPTION_2}`,
     link: "https://apv-frontend-bay.vercel.app",
     github: "https://github.com/juanfuentealbaR/apv-frontend",
-    note: "Desplegado en Vercel y Render, por lo que puede demorar un poco al realizar un registro o login al principio, luego vá rápido.",
+    note: `${i18n.PROJECT_NOTE_2}`,
     image: "/projects/apv.webp",
     tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.MONGODB],
   },
   {
-    title: "Cotizador de Préstamos",
-    description:
-      "Esta simple aplicación web te permite calcular un préstamo con intereses, en donde puedes seleccionar el monto y el plazo en meses. Desarrollado con Vue y TailwindCSS.",
+    title: `${i18n.PROJECT_TITLE_3}`,
+    description: `${i18n.PROJECT_DESCRIPTION_3}`,
     link: "https://jfross-cotizador-vue.netlify.app",
     github: "https://github.com/juanfuentealbaR/cotizador-vue",
     image: "/projects/cotizadorvue.webp",
@@ -137,13 +139,13 @@ const PROJECTS = [
               {github && (
                 <LinkButton href={github}>
                   <GitHub class="size-6" />
-                  Code
+                  {i18n.CODE_BUTTON}
                 </LinkButton>
               )}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
-                  Preview
+                  {i18n.PREVIEW_BUTTON}
                 </LinkButton>
               )}
             </footer>

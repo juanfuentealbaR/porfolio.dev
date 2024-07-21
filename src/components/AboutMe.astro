@@ -1,5 +1,9 @@
 ---
 const personalImageAlt = "Juan Pablo";
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 ---
 
 <article
@@ -8,24 +12,17 @@ const personalImageAlt = "Juan Pablo";
   <div
     class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
+    <p>{i18n.ABOUT_BEFORE_STRONG_1} <strong>{i18n.ABOUT_STRONG_1}</strong>.</p>
+
     <p>
-      Me llamo Juan Pablo, tengo 25 años y mis amigos me dicen Juampi. Terminé
-      mis estudios universitarios en la carrera de Ingeniería Civil Informática
-      en la PUCV. Actualmente me encuentro <strong>buscando trabajo</strong>.
+      {i18n.ABOUT_BEFORE_STRONG_2}
+      <strong>{i18n.ABOUT_STRONG_2}</strong>. {i18n.ABOUT_AFTER_STRONG_1}
+      <strong>{i18n.ABOUT_STRONG_3}</strong>. {i18n.ABOUT_AFTER_STRONG_2}
     </p>
 
     <p>
-      En cuanto a mi trabajo, <strong
-        >me gusta programar aplicaciones Web innovadoras</strong
-      >. Esto siempre con el objetivo de darle la mejor experiencia al usuario.
-      Me encuentro <strong>activamente aprendiendo cosas nuevas</strong>.
-      Encuentro que es algo necesario para todos los programadores del mundo.
-    </p>
-
-    <p>
-      <strong>Activamente estoy desarrollando proyectos</strong> donde pongo en práctica
-      lo aprendido y puedo ser creativo e innovador. ¡Deberías revisar mi porfolio
-      de vez en cuando para ver lo que voy haciendo!
+      <strong>{i18n.ABOUT_STRONG_4}</strong>
+      {i18n.ABOUT_AFTER_STRONG_3}
     </p>
   </div>
 
