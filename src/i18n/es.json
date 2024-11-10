@@ -24,7 +24,7 @@
     "PROJECT_NOTE_1": "Nota: Proyecto desplegado en Render, por lo que demora 1 minuto en cargar, luego vá rápido.",
     "PROJECT_TITLE_2": "APV - Administrador De Pacientes de Veterinaria",
     "PROJECT_DESCRIPTION_2": "Aplicación que sirve para gestionar los pacientes de una veterinaria. Cuenta con login y todo lo relacionado a seguridad de rutas, registro de cuenta con confirmación por correo, recuperar contraseña, y las funciones relacionadas a la gestión de los pacientes. Desarrollada con stack MERN (MongoDB, Express, React y Node) y TailwindCSS.",
-    "PROJECT_NOTE_2": "Nota: Desplegado en Vercel y Render, por lo que puede demorar un poco al realizar un registro o login al principio, luego vá rápido.",
+    "PROJECT_NOTE_2": "Credenciales: correo@correo.com y password (Al ingresar demora un minuto por el hosting gratuito)",
     "PROJECT_TITLE_3": "Cotizador de Préstamos",
     "PROJECT_DESCRIPTION_3": "Esta simple aplicación web te permite calcular un préstamo con intereses, en donde puedes seleccionar el monto y el plazo en meses. Desarrollado con Vue y TailwindCSS.",
     "CODE_BUTTON": "Código",
