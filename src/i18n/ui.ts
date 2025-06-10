@@ -15,7 +15,7 @@ export const LANGUAGES = {
     }
   };
   
-  export const defaultLang = 'es';
+  export const defaultLang = 'en';
   export const showDefaultLang = false;
   
   

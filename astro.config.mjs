@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [tailwind(), robotsTxt(), react()],
   site: 'https://juanfuentealba.vercel.app',
   i18n: {
-    defaultLocale: 'es',
+    defaultLocale: 'en',
     locales: ['es', 'en'],
     routing: {
       prefixDefaultLocale: false
